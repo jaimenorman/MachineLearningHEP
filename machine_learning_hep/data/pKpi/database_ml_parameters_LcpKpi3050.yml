@@ -281,7 +281,7 @@ LcpKpi:
     probcutpresel:
       data: [0.5] #list of nbins  sel_skim_binmin bins
       mc: [0.5] #list of nbins  sel_skim_binmin bins
-    probcutoptimal: [0.8] #list of nbins  sel_skim_binmin bins
+    probcutoptimal: [0.9] #list of nbins  sel_skim_binmin bins
 
   analysis:
     indexhptspectrum: 4 #kD0Kpi=0, kDplusKpipi=1, kDstarD0pi=2, kDsKKpi=3, kLctopKpi=4, kLcK0Sp=5
@@ -312,23 +312,27 @@ LcpKpi:
         mc: null
       data:
         runselection: [null, null]
-        results: [/mnt/temp/TTreeLctopKpiPbPb_test/vAN-20200219_ROOT6-1/PbPb_2018_data/386_20200316-1642/results,
-                  /mnt/temp/TTreeLctopKpiPbPb_test/vAN-20200218_ROOT6-1/PbPb_2018_data/387_20200316-1643/results] #list of periods
-        resultsallp: /mnt/temp/TTreeLctopKpiPbPb_test/vAN-20200218_ROOT6-1/resultsdatatot
+        results: [resultsq,
+                  resultsp] #list of periods
+        resultsallp: resultstot
       mc:
         runselection: [null, null]
-        results: [/mnt/temp/TTreeLctopKpiPbPb_test/vAN-20200219_ROOT6-1/PbPb3050_2018_mc_prodLcpKpi/388_20200316-1739/results, 
-                  /mnt/temp/TTreeLctopKpiPbPb_test/vAN-20200219_ROOT6-1/PbPb3050_2018_mc_prodLcpKpi/389_20200316-1739/results] #list of periods
-        resultsallp: /mnt/temp/TTreeLctopKpiPbPb_test/vAN-20200219_ROOT6-1/resultsmctot
+        results: [resultsMCp, 
+                  resultsMCq] #list of periods
+        resultsallp: resultsmctot
 
       mass_fit_lim: [2.160, 2.440]  # region for the fit of the invariant mass distribution [GeV/c^2]
       bin_width: 0.002 # bin width of the invariant mass histogram
-      sgnfunc: null
-      bkgfunc: null
-      masspeak: null
-      massmin: null
-      massmax: null
-      rebin: null
+      sgnfunc: [0]
+      bkgfunc: [2]
+      masspeak: 2.2864
+      massmin: 2.18
+      massmax: 2.42
+      rebin: 6
+      fix_mean: false
+      fix_sigma: false 
+      sigmaarray: null
+
       includesecpeak: null
       masssecpeak: null
       FixedMean: null
